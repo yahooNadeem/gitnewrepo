@@ -27,8 +27,8 @@ jobs:
     - name: Terraform Init
       run: terraform init
 
-    - name: Destroy EC2 Instance
-      run: terraform plan
+    - name: Terraform Plan
+      run: terraform plan -target=aws_instance.Terraform_EC2
 
-    - name: Terraform Apply
+    - name: Terraform Destroy EC2
       run: terraform destroy -target=aws_instance.Terraform_EC2 -auto-approve
