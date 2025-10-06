@@ -1,11 +1,15 @@
 provider "aws" {
-  region = "eu-west-1"  # Ireland region
+  region = "eu-west-1"
 }
 
-resource "aws_instance" "Terraform_EC2" {
-  ami           = "ami-02aaba56063c2c599"  # Replace with valid AMI ID for Ireland
-  instance_type = "t3.medium"
+resource "aws_s3_bucket" "nadeem_bucket" {
+  bucket = "nadeem-terraform-bucket"
+  acl    = "private"
+
   tags = {
-    Name = "Terraform-EC2"
+    Name        = "Nadeem's S3 Bucket"
+    Environment = "Development"
+    Owner       = "Nadeem Ahmed Kafil Siddiqui"
+    Project     = "Infra Automation"
   }
 }
