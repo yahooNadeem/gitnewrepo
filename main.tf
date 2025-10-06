@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "nadeem_bucket" {
-  bucket = "nadeem-terraform-bucket"
+  bucket = "nadeemterrabucket"
   acl    = "private"
 
   tags = {
